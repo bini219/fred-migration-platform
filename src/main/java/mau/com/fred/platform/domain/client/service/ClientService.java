@@ -2,6 +2,7 @@ package mau.com.fred.platform.domain.client.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mau.com.fred.platform.application.client.request.SearchClientsRequest;
 import mau.com.fred.platform.domain.client.model.Client;
 import mau.com.fred.platform.domain.client.repository.ClientRepository;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class ClientService {
 
     public List<Client> getMigratedClients() {
         return clientRepository.findAllMigrated();
+    }
+
+    public List<Client> searchClients(SearchClientsRequest searchClientsRequest) {
+        return clientRepository.searchClients(searchClientsRequest.getQuery());
     }
 
 }

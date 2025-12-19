@@ -1,5 +1,6 @@
 package mau.com.fred.platform.domain.client.service;
 
+import mau.com.fred.platform.application.client.request.SearchClientsRequest;
 import mau.com.fred.platform.domain.client.model.Client;
 import mau.com.fred.platform.domain.client.repository.ClientRepository;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
