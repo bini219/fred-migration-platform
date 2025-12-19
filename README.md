@@ -35,7 +35,7 @@ This project follows **Domain-Driven Design (DDD)** with a layered architecture:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/bini219/fred-migration-platform.git
-   cd platform
+   cd fred-migration-platform
    ```
 
 2. **Build the project**
