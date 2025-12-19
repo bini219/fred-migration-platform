@@ -13,4 +13,6 @@ public interface ClientRepository {
     Optional<Client> findById(Long id);
 
     void save(Client client);
+
+    List<Client> searchClients(String query);
 }

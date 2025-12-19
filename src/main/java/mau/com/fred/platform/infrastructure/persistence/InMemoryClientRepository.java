@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @Repository
 public class InMemoryClientRepository implements ClientRepository {
@@ -66,5 +67,17 @@ public class InMemoryClientRepository implements ClientRepository {
     @Override
     public void save(Client client) {
         storage.put(client.getId(), client);
+    }
+
+    @Override
+    public List<Client> searchClients(String query) {
+        String lowerQuery = query.toLowerCase();
+
+        return storage.values().stream()
+                      .filter(client ->
+                              client.getName().toLowerCase().contains(lowerQuery) ||
+                                      client.getEmail().toLowerCase().contains(lowerQuery)
+                      )
+                      .collect(Collectors.toList());
     }
 }
