@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client-migration-tool-platform
+
+logging:
+  level:
+    com.mau.com.fred.platform: ${MIGRATION-SERVICE-LOG-LEVEL:INFO}
+
+server:
+  port: ${MIGRATION-SERVICE-PORT:8080}
