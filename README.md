@@ -112,6 +112,33 @@ Returns all clients that have been successfully migrated.
 ]
 ```
 
+### Search Clients
+```http
+GET /api/client?query=acme
+```
+Returns all clients that have been successfully migrated.
+
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Acme Corporation",
+    "email": "contact@acme.com",
+    "migrated": true
+  }
+]
+```
+**Error Responses:**
+- `400 Bad Request` 
+```json
+{
+  "timestamp": "2025-12-19T13:00:07.879664",
+  "message": "query: Query cannot be empty",
+  "details": "VALIDATION_ERROR"
+}
+```
+
 ## Configuration
 
 Configuration is located in `src/main/resources/application.yml`:
